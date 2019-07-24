@@ -1,6 +1,5 @@
-#myCanvas {
-  margin-left: 5vw;
-  margin-top: 5vh;
+#gesture-box {
+  margin: 5vw;
   width: 90vw;
   height: 80vh;
   border: dotted black;
@@ -17,19 +16,9 @@
 } */
 
 .display_size {
-  height: 5vh;
+  height: 2vh;
   width: 100vw;
   margin: 0 auto;
   font-family: 'arial black';
   display: block;
-}
-
-.erase-btn {
-  margin: 0 auto;
-  text-align: center;
-  width: 30vw;
-  height: 10vh;
-  font-size: 5vw;
-  float: right;
-  margin-right: 5vw;
 }

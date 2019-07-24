@@ -6,6 +6,11 @@ def index(request):
     return render(request, 'draw/index.html', {})
 
 def room(request, room_name):
-    return render(request, 'draw/room.html', {
-        'room_name_json': mark_safe(json.dumps(room_name))
+    room_name;
+      
+    if room_name == 'room':
+      return render(request, 'draw/room.html', {'room_name_json': mark_safe(json.dumps(room_name))
+#     elif room_name == 'room2':
+#       return render(request, 'draw/room2.html', {
+#         'room_name_json': mark_safe(json.dumps(room_name))
     })
