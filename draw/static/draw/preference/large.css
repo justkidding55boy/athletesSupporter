@@ -1,0 +1,28 @@
+.box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin: 10vh;
+}
+
+.player-info {
+  width: 20vw;
+  height: 150px;
+}
+
+.small-box {
+  margin: 1vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.info {
+  width: 6vw;
+  text-align: center;
+}
+
+.info-icons {
+  height: 64px;
+  width: 64px;
+}
