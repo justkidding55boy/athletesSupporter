@@ -1,8 +1,11 @@
 #gesture-box {
-  margin: 5vw;
+/*   margin: 5vw; */
   width: 90vw;
   height: 80vh;
+/*   width: 312px; */
+/*   height: 390px; */
   border: dotted black;
+  margin: 0 auto;
 }
 
 /* .memo {
