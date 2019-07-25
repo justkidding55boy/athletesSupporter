@@ -16,14 +16,7 @@
         $('.display_size').text('normal');
       }
 
-    var socket = new WebSocket(
-        'wss://p3-websockets-justkidding55boy-eijikudo883404.codeanyapp.com/ws/draw');
-    
-    // notify console if socket closes unexpectedly
-    socket.onclose = function(e) {
-      console.error('Chat socket closed unexpectedly');
-    };
-
+   
 
   socket.onmessage = function(msg) {
     

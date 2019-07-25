@@ -20,7 +20,24 @@
   <!-- You may change the dimensions of this canvas -->
   <div class="display_size" style="text-align: center; font-size: 2vw;"></div>
   <div id="watch-box">
+    <div id="conditions">
+      <div class="condition" id = "tired">
+         <img src="{% static 'imgs/tired.png' %}">
+      </div>
+      <div class="condition" id = "water">
+        <img src="{% static 'imgs/water-bottle-empty.png' %}">
+      </div>
+      <div class="condition" id = "lost">
+        <img src="{% static 'imgs/lost.png' %}">
+      </div>
+    </div>
     
+    <div class="sent">
+      <p>Sent!<img src="{% static 'imgs/tired.png' %}" class="sent-tired">
+        <img src="{% static 'imgs/water-bottle-empty.png' %}" class="sent-water">
+        <img src="{% static 'imgs/lost.png' %}" class="sent-lost">
+      </p>
+    </div>
   </div>
   
   <!-- 390 x 312 px-->
@@ -29,8 +46,5 @@
   
 </body>
 <script type="text/javascript" src="{% static 'draw/preference/functions.js' %}"></script>
-<script type="text/javascript" src="{% static 'draw/preference/index.js' %}"></script>
-<script type="text/javascript" src="{% static 'draw/preference/receive.js' %}"></script>
-<script type="text/javascript" src="{% static 'draw/preference/receive_small.js' %}"></script>
-
+<script type="text/javascript" src="{% static 'draw/preference/small.js' %}"></script>
 </html>

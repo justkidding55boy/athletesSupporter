@@ -18,10 +18,18 @@
 <body>
     <!-- You may change the dimensions of this canvas -->
 <!--     <div class="display_size" style="text-align: center; font-size: 2vw;"></div> -->
-    <div id="gesture-box"></div>
+    <div id="gesture-box">
+      <div class="sent">
+        <p>Sent!<img src="{% static 'imgs/tired.png' %}" class="sent-tired">
+          <img src="{% static 'imgs/water-bottle-empty.png' %}" class="sent-water">
+          <img src="{% static 'imgs/lost.png' %}" class="sent-lost">
+        </p>
+      </div>
+    </div>
+
+    <div id="message" style="width:100vw; height: 5vh; background-color:orange; font-size:2vh;">
+  </div>
 </body>
     <script type="text/javascript" src="{% static 'draw/preference/functions.js' %}"></script>
     <script type="text/javascript" src="{% static 'draw/preference/index.js' %}"></script>
-    <script type="text/javascript" src="{% static 'draw/preference/receive.js' %}"></script>
-    <script type="text/javascript" src="{% static 'draw/preference/receive_small.js' %}"></script>
 </html>
