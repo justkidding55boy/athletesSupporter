@@ -10,11 +10,37 @@ var next_user = 1;
 $(document).ready(function() {
   var ws = new WebSocket('wss://athletesSupporter-eijikudo883404.codeanyapp.com/ws/draw');
 
+  // count delay
+  var delay = 0;
+  var testExists = false;
+
+  document.addEventListener('keydown', logKey);
+
+  function logKey(e) {
+    if (e.key == "e") {
+      console.log("Begin Testing");
+      setInterval(setDelay, 1);
+      console.log("hello");
+      textExists = true;
+    }
+  }
+
+  function setDelay() {
+    delay += 0.001
+  }
+
   ws.onmessage = function(msg) {
     var info = JSON.parse(msg.data);
-    console.log(msg);
+//     console.log(msg);
     var user_id = info.user_id;
     var status = info.status;
+
+    if (testExists) {
+      console.log("User ID: " + user_id + ", status: " + status + ", delay: " + delay + "s");
+      delay = 0;
+      testExists = false;
+    }
+
     if (status == "good") {
       // new user
       var new_user = {
@@ -77,6 +103,10 @@ $(document).ready(function() {
     var element = document.getElementById("user-id-" + number);
     element.innerHTML = "User ID: " + id;
   }
+
+
+
+
 });
 
 function resetStatus(id) {

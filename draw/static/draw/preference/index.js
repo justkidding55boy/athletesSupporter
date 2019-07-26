@@ -67,7 +67,15 @@ $(document).ready(function() {
 //     }, 1750);
 //   });
   
-  $('#message').text('hello');
+//   $('#message').text('hello');
+  
+  $("#alert").html(`<p>Your ID = ${user.user_id}</p>`);
+  
+  $('#alert').click(function(){
+    $("#alert").fadeOut();
+  });
+  
+  
 
   //swipe
   var $swipeElm = document.getElementById('gesture-box');

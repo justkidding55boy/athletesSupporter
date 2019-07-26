@@ -26,9 +26,7 @@ $(document).ready(function(){
     ws.send(json);
   }
   
-  ws.onclose = function() {
-    user.status = "end"
-  }
+
   
 
   ws.onmessage = function(msg) {
@@ -41,6 +39,15 @@ $(document).ready(function(){
     var json = JSON.stringify(sending_user);
     ws.send(json);
   }
+  
+  
+  $("#alert").html(`<p>Your ID = ${user.user_id}</p>`);
+  
+  $('#alert').click(function(){
+    $("#alert").fadeOut();
+  });
+  
+  
   
     //tap for tired
   var $tiredElm = document.getElementById('tired');
