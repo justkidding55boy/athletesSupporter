@@ -35,33 +35,32 @@ $(document).ready(function() {
 
       displayId(next_user, user_id);
 
-      next_user = next_user + 1;
+      if (next_user < 8) {
+        next_user = next_user + 1;
+      }
     } else {
       var user_number = users[user_id].number;
-
-      if (status != "end") {
-        switch (status) {
-          case "tired":
-            document.getElementById("tired-" + user_number).style.display = "inline";
-            document.getElementById("happy-" + user_number).style.display = "none";
-            document.getElementById("tired-status-" + user_number).style.backgroundColor = alert_color;
-            break;
-          case "water":
-            document.getElementById("empty-" + user_number).style.display = "inline";
-            document.getElementById("water-" + user_number).style.display = "none";
-            document.getElementById("water-status-" + user_number).style.backgroundColor = alert_color;
-            break;
-          case "lost":
-            document.getElementById("lost-" + user_number).style.display = "inline";
-            document.getElementById("found-" + user_number).style.display = "none";
-            document.getElementById("lost-status-" + user_number).style.backgroundColor = alert_color;
-        }
-      } else {
-
+      switch (status) {
+        case "tired":
+          document.getElementById("tired-" + user_number).style.display = "inline";
+          document.getElementById("happy-" + user_number).style.display = "none";
+          document.getElementById("tired-status-" + user_number).style.backgroundColor = alert_color;
+          break;
+        case "water":
+          document.getElementById("empty-" + user_number).style.display = "inline";
+          document.getElementById("water-" + user_number).style.display = "none";
+          document.getElementById("water-status-" + user_number).style.backgroundColor = alert_color;
+          break;
+        case "lost":
+          document.getElementById("lost-" + user_number).style.display = "inline";
+          document.getElementById("found-" + user_number).style.display = "none";
+          document.getElementById("lost-status-" + user_number).style.backgroundColor = alert_color;
+          break;
+        default:
+          // what happens when user closes
+          break;
       }
     }
-
-
 
   }
 
@@ -81,5 +80,13 @@ $(document).ready(function() {
 });
 
 function resetStatus(id) {
-//   console.log(id);
+  document.getElementById("tired-" + id).style.display = "none";
+  document.getElementById("happy-" + id).style.display = "inline";
+  document.getElementById("empty-" + id).style.display = "none";
+  document.getElementById("water-" + id).style.display = "inline";
+  document.getElementById("lost-" + id).style.display = "none";
+  document.getElementById("found-" + id).style.display = "inline";
+  document.getElementById("tired-status-" + id).style.backgroundColor = "white";
+  document.getElementById("water-status-" + id).style.backgroundColor = "white";
+  document.getElementById("lost-status-" + id).style.backgroundColor = "white";
 }
