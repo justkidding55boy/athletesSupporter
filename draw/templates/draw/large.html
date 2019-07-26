@@ -10,6 +10,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'imgs/runner.png' %}">
 
   <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
   <script type="text/javascript" src="https://hammerjs.github.io/dist/hammer.min.js"></script>
@@ -24,52 +25,65 @@
 
   <!--     <div id="gesture-box"></div> -->
   <div class="box">
-    <div class="player-info" style="border-style: solid">
+    <div class="player-info" id="teammate-1" style="border-style: solid">
       <div class="teammate-info">
-        Teammate #1
+        Teammate #1 <i class="fa fa-check-square" id="button-1" style="display: none" onclick="resetStatus(1)"></i>
       </div>
       <div class="small-box">
-        <div class="info break">
-          <img src="{% static 'imgs/happy.png' %}" class="info-icons">
+        <div class="info tired" id="tired-status-1">
+          <img src="{% static 'imgs/happy.png' %}" class="info-icons" id="happy-1" style="display: inline">
+          <img src="{% static 'imgs/tired.png' %}" class="info-icons" id="tired-1" style="display: none">
         </div>
-        <div class="info water">
-          <img src="{% static 'imgs/water-bottle-empty.png' %}" class="info-icons">
+        <div class="info water" id="water-status-1">
+          <img src="{% static 'imgs/water-bottle-full.png' %}" class="info-icons" id="water-1" style="display: inline">
+          <img src="{% static 'imgs/water-bottle-empty.png' %}" class="info-icons" id="empty-1" style="display: none">
         </div>
-        <div class="info lost">
-          <img src="{% static 'imgs/found.png' %}" class="info-icons">
+        <div class="info lost" id="lost-status-1">
+          <img src="{% static 'imgs/found.png' %}" class="info-icons" id="found-1" style="display: inline">
+          <img src="{% static 'imgs/lost.png' %}" class="info-icons" id="lost-1" style="display: none">
         </div>
       </div>
-      <div class="user-id">
-        User ID: 
-      </div>
+      <div id="user-id-1"></div>
     </div>
     <div class="player-info" id="teammate-2" style="border-style: solid">
-      Teammate #2
+      <div class="teammate-info">
+        Teammate #2 <i class="fa fa-check-square" id="button-2" style="display: none" onclick="resetStatus(2)"></i>
+      </div>
       <div class="small-box">
-        <div class="info break">
-          <img src="{% static 'imgs/happy.png' %}" class="info-icons">
+        <div class="info tired" id="tired-status-2">
+          <img src="{% static 'imgs/happy.png' %}" class="info-icons" id="happy-2" style="display: inline">
+          <img src="{% static 'imgs/tired.png' %}" class="info-icons" id="tired-2" style="display: none">
         </div>
-        <div class="info water">
-          <img src="{% static 'imgs/water-bottle-empty.png' %}" class="info-icons">
+        <div class="info water" id="water-status-2">
+          <img src="{% static 'imgs/water-bottle-full.png' %}" class="info-icons" id="water-2" style="display: inline">
+          <img src="{% static 'imgs/water-bottle-empty.png' %}" class="info-icons" id="empty-2" style="display: none">
         </div>
-        <div class="info lost">
-          <img src="{% static 'imgs/found.png' %}" class="info-icons">
+        <div class="info lost" id="lost-status-2">
+          <img src="{% static 'imgs/found.png' %}" class="info-icons" id="found-2" style="display: inline">
+          <img src="{% static 'imgs/lost.png' %}" class="info-icons" id="lost-2" style="display: none">
         </div>
       </div>
+      <div id="user-id-2"></div>
     </div>
-    <div class="player-info" style="border-style: solid">
-      Teammate #3
+    <div class="player-info" id="teammate-3" style="border-style: solid">
+      <div class="teammate-info">
+        Teammate #3 <i class="fa fa-check-square" id="button-3" style="display: none" onclick="resetStatus(3)"></i>
+      </div>
       <div class="small-box">
-        <div class="info break">
-          <img src="{% static 'imgs/happy.png' %}" class="info-icons">
+        <div class="info tired" id="tired-status-3">
+          <img src="{% static 'imgs/happy.png' %}" class="info-icons" id="happy-3" style="display: inline">
+          <img src="{% static 'imgs/tired.png' %}" class="info-icons" id="tired-3" style="display: none">
         </div>
-        <div class="info water">
-          <img src="{% static 'imgs/water-bottle-empty.png' %}" class="info-icons">
+        <div class="info water" id="water-status-3">
+          <img src="{% static 'imgs/water-bottle-full.png' %}" class="info-icons" id="water-3" style="display: inline">
+          <img src="{% static 'imgs/water-bottle-empty.png' %}" class="info-icons" id="empty-3" style="display: none">
         </div>
-        <div class="info lost">
-          <img src="{% static 'imgs/found.png' %}" class="info-icons">
+        <div class="info lost" id="lost-status-3">
+          <img src="{% static 'imgs/found.png' %}" class="info-icons" id="found-3" style="display: inline">
+          <img src="{% static 'imgs/lost.png' %}" class="info-icons" id="lost-3" style="display: none">
         </div>
       </div>
+      <div id="user-id-3"></div>
     </div>
     <div class="player-info" style="border-style: solid">
       Teammate #4
@@ -150,6 +164,6 @@
 <script type="text/javascript" src="{% static 'draw/preference/receive.js' %}"></script>
 <script type="text/javascript" src="{% static 'draw/preference/receive_small.js' %}"></script>
 <script type="text/javascript" src="{% static 'draw/preference/large.js' %}"></script>
-  
+
 
 </html>

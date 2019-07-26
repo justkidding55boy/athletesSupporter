@@ -28,7 +28,6 @@ $(document).ready(function(){
   
   ws.onclose = function() {
     user.status = "end"
-    
   }
   
 

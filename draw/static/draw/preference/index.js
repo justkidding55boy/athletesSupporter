@@ -28,9 +28,9 @@ $(document).ready(function() {
   
 
   ws.onmessage = function(msg) {
-    console.log(msg.data);
+//     console.log(msg.data);
     var received_user = JSON.parse(msg.data);
-    console.log(received_user);
+//     console.log(received_user);
   }
   
   
